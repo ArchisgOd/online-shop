@@ -2,7 +2,7 @@ package kz.aitu.oop.practice.assignment5.entities;
 
 import java.time.LocalDate;
 
-public class Employee {
+public class Employee { // here i created class for fields with Constructor, getter and setters, toString
     private int id;
     private int age;
     private String name;

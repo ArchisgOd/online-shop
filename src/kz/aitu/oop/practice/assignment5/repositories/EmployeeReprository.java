@@ -6,17 +6,17 @@ import kz.aitu.oop.practice.assignment5.repositories.interfaces.IEmployeeReposit
 import java.sql.*;
 import java.util.ArrayList;
 
-public class EmployeeReprository implements IEmployeeRepository {
+public class EmployeeReprository implements IEmployeeRepository { // here i create class for methods
     private final IDBManager DBManager;
 
-    public EmployeeReprository(IDBManager DBManager){
+    public EmployeeReprository(IDBManager DBManager){ // simple constructor
 
         this.DBManager = DBManager;
     }
 
 
     @Override
-    public ArrayList<Employee> searchEmployeeByName(String name) {
+    public ArrayList<Employee> searchEmployeeByName(String name) { // this my first method for find any employee by name
         Connection connection = null;
         try {
             connection = DBManager.getConnection();
@@ -44,7 +44,7 @@ public class EmployeeReprository implements IEmployeeRepository {
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
+    public Employee getEmployeeById(int id) { //  second method  to find employee by ID if you forget name of  employee
         Connection connection = null;
         try {
             connection = DBManager.getConnection();
@@ -72,7 +72,7 @@ public class EmployeeReprository implements IEmployeeRepository {
     }
 
     @Override
-    public boolean addEmployee(Employee employee) {
+    public boolean addEmployee(Employee employee) { // this method to add a new worker
         Connection connection = null;
         try {
             connection = DBManager.getConnection();
@@ -99,7 +99,7 @@ public class EmployeeReprository implements IEmployeeRepository {
     }
 
     @Override
-    public boolean removeEmployeeById(int id) {
+    public boolean removeEmployeeById(int id) { // this function to delete workers which was fired or left the job
         Connection connection = null;
         try {
             connection = DBManager.getConnection();
@@ -116,7 +116,7 @@ public class EmployeeReprository implements IEmployeeRepository {
     }
 
     @Override
-    public ArrayList<Employee> showAllEmployee() {
+    public ArrayList<Employee> showAllEmployee() { //  method to see all workers in this Company
         Connection connection = null;
         try {
             connection = DBManager.getConnection();
@@ -143,14 +143,14 @@ public class EmployeeReprository implements IEmployeeRepository {
         return null;
     }
     @Override
-    public int totalsalary() {
+    public int totalsalary() { //  to calculate the total salary of workers
         Connection connection = null;
         try {
             connection = DBManager.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT SUM(salary) FROM employee ");
             preparedStatement.executeQuery();
             ResultSet resultSet =  preparedStatement.executeQuery();
-            if(resultSet.next()){ }
+            if(resultSet.next()){}
             return  resultSet.getInt("sum");
         }
         catch (SQLException throwables) {

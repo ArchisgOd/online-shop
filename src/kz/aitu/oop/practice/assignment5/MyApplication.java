@@ -9,7 +9,7 @@ public class MyApplication {
     final EmployeeController employeeController;
     private final Scanner scanner;
 
-    public MyApplication(EmployeeController employeeController){
+    public MyApplication(EmployeeController employeeController){ // this application  for make convenient  interface for users and make simple
         this.employeeController = employeeController;
         scanner = new Scanner(System.in);
 

@@ -5,7 +5,7 @@ import kz.aitu.oop.practice.assignment5.data.interfaces.IDBManager;
 import kz.aitu.oop.practice.assignment5.entities.Employee;
 import kz.aitu.oop.practice.assignment5.repositories.interfaces.IEmployeeRepository;
 
-public class EmployeeController{
+public class EmployeeController{ // this class for  connection between MyApplication and EmployeeRepository
     private final IEmployeeRepository employeeRepository;
 
     public EmployeeController(IEmployeeRepository employeeRepository) {

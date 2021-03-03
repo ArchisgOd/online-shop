@@ -7,7 +7,7 @@ import kz.aitu.oop.practice.assignment5.repositories.interfaces.IEmployeeReposit
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // here i created objects  to start MyApp
         IDBManager DBManager = new DBManager();
         IEmployeeRepository employeeRepository = new EmployeeReprository(DBManager);
         EmployeeController employeeController = new EmployeeController(employeeRepository);
